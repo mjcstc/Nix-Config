@@ -1,0 +1,779 @@
+
+[
+
+
+{ 
+    "include": ["~/.config/waybar/hardwaremodules2","~/.config/waybar/drawers"],
+      "name": "status",
+    "layer": "top", 
+    "position": "top", 
+  "height": 28, 
+  //"width": 1360, 
+   "spacing": 0, // Gaps between modules (4px)
+   // Choose the order of the modules
+   "margin": "0 0 0 0",
+   "modules-right": ["","group/session","pulseaudio#center","network#stats","cpu#icon","cpu","memory#icon","memory","temperature#alt","temperature#icon","","","","","","","clock#date","clock#time","group/files","","network","pulseaudio#icon",""],
+"modules-center": ["","","","","cava","",""],
+   "modules-left": ["custom/nixos","","hyprland/window","hyprland/workspaces","","","","cpu#surrogate",""],
+   // Modules configuration
+   
+
+   "keyboard-state": {
+       "numlock": true,
+       "capslock": true,
+       "format": "{name} {icon}",
+       "format-icons": {
+           "locked": "",
+           "unlocked": ""
+       }
+   },
+
+   "custom/browser": {
+    "format": "",
+    "on-click": "librewolf",
+
+
+   
+
+   },
+   "privacy": {
+	"icon-spacing": 4,
+	"icon-size": 18,
+	"transition-duration": 250,
+	"modules": [
+		{
+			"type": "screenshare",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-out",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-in",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		}
+	]
+},
+
+  "group/toolbelt": {
+    "orientation": "horizontal",
+    "modules": [
+       // "custom/browser",
+        "custom/apps",
+        "custom/music",
+        "custom/lutris",
+       // "custom/killer",
+        "cusom/browser",
+        "custom/swaync",
+        "custom/search",
+        "pulseaudio#icon"
+
+    ]
+},
+
+
+
+
+
+   "sway/mode": {
+       "format": "<span style=\"italic\">{}</span>"
+   },
+   "sway/scratchpad": {
+       "format": "{icon} {count}",
+       "show-empty": false,
+       "format-icons": ["", ""],
+       "tooltip": true,
+       "tooltip-format": "{app}: {title}"
+   },
+
+   "tray": {
+       "icon-size": 12,
+       "spacing": 12,
+       "reverse-direction": true 
+   },
+   "clock": {
+       //"timezone": "America/New_York",
+       "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+       "format": "{: %A, %B, %d, %Y }",
+       "format-alt": "{: %I:%M %p }"
+   },
+   
+
+
+"pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+},
+
+"backlight": {
+    "format": "{icon}",
+    "format-alt": "{percent}% {icon}",
+    "format-alt-click": "click-right",
+    "format-icons": [
+        ""
+    ]
+},
+   "battery#icon": {
+    "interval": 1,
+    "states": {
+        "warning": 30,
+        "critical": 20
+        },
+	"format": "{icon}",
+	"format-warning": "<span foreground='#ffffff'>{icon}</span>",
+	"format-critical": "<span foreground='#f36060'>{icon}</span>",
+	"format-charging": "<span foreground='#C6FFB4'>{icon}󱐋</span>",
+	"format-plugged": "<span foreground='#ffffff'>󱟢</span>",
+	"format-full": "<span foreground='#ffffff'>󱟢</span>",
+    "format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"],
+    "format-icons-charging": ["󰢜","󰂆","󰂇","󰂇","󰂇","󰂉","󰂉","󰂉","󰂉","󰂅"]
+  },
+  "battery#percentage": {
+    "format-charging": "{capacity}%",
+    "format": "{capacity}%",
+    "tooltip-format": "{time}"
+  },
+   "battery#bat2": {
+       "bat": "BAT2"
+   },
+   "network": {
+       // "interface": "wlp2*", // (Optional) To force the use of this interface
+       "format-wifi": "  ",
+       "format-ethernet": "{ipaddr}/{cidr} ",
+       "tooltip-format": "{ifname} via {gwaddr} ",
+       "format-linked": "{ifname} (No IP) ",
+       "format-disconnected": "Disconnected ⚠",
+       "format-alt": "  "
+       
+   },
+
+   "network#stats2": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "{essid}      <span  foreground='#ffbb59'>{frequency}Ghz</span>    <span  foreground='#d0ff96'>   {bandwidthUpBits}</span>       <span  foreground='#96c7ff'>   {bandwidthDownBits}</span> ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "  "
+    
+},
+      
+   "pulseaudio#icon": {
+    "format-alt-click": "click-right",
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "<span foreground='#ff0000'>󰝟</span>",
+    "format-source": "{volume}% ",
+    "format-source-muted": " Muted",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "hdmi": ["󱎔   󰕿","󱎔   󰖀","󱎔   󰕾"],
+        "portable": "",
+        "car": "",
+        "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol"
+},
+
+"pulseaudio#center": {
+    "format-alt-click": "click-right",
+    "interval": 1,
+    // "scroll-step": 1, // %, can be a float
+    "format": "{format_source}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "<span foreground=''></span>",
+    "format-source": "<span>  </span>",
+    "format-source-muted": "<span foreground='#ffffff'></span>",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pamixer --default-source -m",
+    "on-click-right": "pamixer --default-source -u"
+},
+
+
+"pulseaudio#text2": {
+    "format-alt-click": "click-right",
+    "interval": 1,
+    // "scroll-step": 1, // %, can be a float
+    "format": "{format_source}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "<span foreground=''></span>",
+    "format-source": "<span size='medium'>Transmitting Audio  </span>",
+    "format-source-muted":  "<span size='medium' foreground='#FF8181' >Microphone Halted   </span>",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pamixer --default-source -m",
+    "on-click-right": "pamixer --default-source -u"
+},
+
+
+   "pulseaudio#percentage": {
+       // "scroll-step": 1, // %, can be a float
+       "format": "{volume}%",
+       "format-bluetooth": "{volume}% {icon} {format_source}",
+       "format-bluetooth-muted": " {icon} {format_source}",
+       "format-muted": "",
+       "format-source": "{volume}% ",
+       "format-source-muted": " Muted",
+       "format-icons": {
+           "headphone": "",
+           "hands-free": "",
+           "headset": "",
+           "phone": "",
+           "portable": "",
+           "car": "",
+           "default": ["", "", ""]
+       },
+       "on-click": "pavucontrol"
+   },
+   "custom/media": {
+       "format": "{icon} {}",
+       "return-type": "json",
+       "max-length": 10,
+       "format-icons": {
+           "spotify": "<span foreground='#66ff66' size='large'>󰾆</span>",
+           "default": "🎜"
+       },
+       "escape": true,
+       "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+       // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+
+       
+
+
+   },
+   "custom/nixos": {
+       "format": "",
+       "on-click": "foot",
+       "tooltip": false
+   },
+
+   "custom/search": {
+    "format":"<span size='large'>󰍉 </span>",
+    "on-click": "Thunar",
+},
+
+"user": {
+        "format": "{uptime}",
+        "interval": 60,
+        "height": 30,
+        "width": 30,
+        "icon": true,
+        "avatar": "~/Pictures/wallpapers/mountain.jpg"
+},
+
+  
+        "wlr/taskbar": {
+	"format": "{icon}",
+	"icon-size": 14,
+	"icon-theme": "Numix-Circle",
+	"tooltip-format": "{title}",
+	"on-click": "activate",
+	"on-click-middle": "close",
+	"ignore-list": [
+	    "Alacritty"
+	],
+	"app_ids-mapping": {
+		"firefoxdeveloperedition": "firefox-developer-edition"
+	},
+	"rewrite": {
+		"Firefox Web Browser": "Firefox",
+		"Foot Server": "Terminal"
+	}
+},
+
+"custom/power": {
+    "format": "<span foreground='#ff5733' size='x-large'> 󰐥</span>",
+    "on-click": "wlogout"
+    
+},
+
+
+
+
+
+  
+
+  "group/battery": {
+    "orientation": "horizontal",
+    "modules": [
+        "battery#percentage",
+        "battery#icon"
+    ]
+},
+
+
+"group/pulseaudio": {
+    "orientation": "horizontal",
+    "modules": [
+        "pulseaudio#icon",
+        "pulseaudio#percentage"
+    ]
+},
+
+"group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+        "cpu#icon",
+        "temperature#icon"
+    ]
+},
+
+
+"group/temperature": {
+    "orientation": "horizontal",
+    "modules": [
+        "temperature#text",
+        "temperature#icon"
+    ]
+},
+
+"custom/label": {
+    "format": "Desktop 󰁔"
+},
+
+"hyprland/window": {
+    "format": " {class} ",
+    "rewrite": {
+        
+        "(.*) - osu!": "osu",
+        "(.*) — Mozilla Firefox": "🌎 $1",
+        "(.*) — Ablaze Floorp": "Floorp Web Browser",
+        "(.*) - fish": "> [$1]"
+    },
+    "separate-outputs": true
+    
+},
+
+
+"group/group-cpu": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 400,
+        "children-class": "not-cpu",
+        "transition-left-to-right": true,
+    },
+    "modules": [
+        "",
+        "temperature#icon", // First element is the "group leader" and won't ever be hidden
+        "cpu#surrogate",
+        "memory#icon",
+        "cpu#icon"
+      
+
+    ]
+},
+
+
+
+"group/session": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 400,
+        "children-class": "not-cpu",
+        "transition-left-to-right": true,
+    },
+    "modules": [
+        "custom/user",
+        "custom/logout", // First element is the "group leader" and won't ever be hidden
+        "custom/lock",
+        "custom/reboot",
+        "custom/shutdown"
+      
+
+    ]
+},
+
+
+
+"group/files": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 400,
+        "children-class": "not-custom/search",
+        "transition-left-to-right": true,
+    },
+    "modules": [
+        "custom/search",
+        "custom/home", // First element is the "group leader" and won't ever be hidden
+        "custom/downloads",
+        "custom/pictures",
+        "custom/videos",
+        "custom/config"
+      
+
+    ]
+},
+
+
+"group/group-input": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 300,
+        "children-class": "not-power",
+        "transition-left-to-right": false,
+    },
+    "modules": [
+    
+        "pulseaudio#center", // First element is the "group leader" and won't ever be hidden
+        "pulseaudio#text2",
+        "",
+        ""
+      
+
+    ]
+},
+
+
+
+
+"mpris": {
+	"format": "{player_icon} <span foreground='#000000'size='large'>{title} {artist}</span> ",
+    "album-len": 0,
+    "dynamic-separator": " by ",
+	"format-paused": "<span foreground='#ff0000' size='xx-large'>{plater_icon}</span> <span>{title} {artist}</span>  ",
+    "max-length": 100,
+    "interval": 1,
+    "dynamic-order": ["title", "artist", "album", "position", "length"],
+	"player-icons": {
+        "brave": "<span foreground='#ff5b5b' size='x-large'>  </span>",
+        "firefox": "<span foreground='#ff6d32' size='x-large'> </span>",
+		"default": "<span foreground='#45b3e7' size='x-large'>󰝚</span>",
+        "spotify": "<span foreground='#6FBF52'size='x-large'>󰓇 </span>",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "⏸"
+	}
+	// "ignored-players": ["firefox"]
+},
+
+"custom/fan": {
+    "exec": "sensors | awk '/fan1:/ {print $2,$3}'",
+    "interval": 5
+  },
+
+"mpris#icon": {
+	"format": "{status_icon}     {player_icon}   {title}   ",
+    "interval": 0,
+	"format-paused": "{status_icon}       {player_icon}   {title}   ",
+    "on-scroll-down" : "playerctld shift",
+    "on-scroll-up" : "playerctld unshift",
+    "max-length": 38,
+	"player-icons": {
+		"brave": "<span foreground='#FF3F3F' size='x-large'> </span>",
+        "firefox": "<span foreground='#4EA8D8' size='x-large'> </span>",
+		"default": "<span foreground='#B300C2' size='x-large'>󰠃 </span>",
+        "spotify": "<span foreground='#89C452'size='x-large'>󰓇</span>",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "<span foreground='#FF4646' size='x-large'></span>",
+        "playing": "<span foreground='#46FF4E' size='x-large'></span>",
+        "stopped": "<span foreground='#ffffff' size='x-large'> --</span>"
+	}
+	// "ignored-players": ["firefox"]
+},
+
+"mpris#icon2": {
+	"format": "{player_icon}",
+    "interval": 0,
+	"format-paused": "{status_icon}",
+    "max-length": 40,
+	"player-icons": {
+		"default": "<span size='xx-large'>󰎆 </span>",
+        "spotify": "<span size='xx-large'>󰓇 </span>",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "<span size='xx-large'>󰝛 </span>",
+        "playing": "<span size='xx-large'>󰝚</span>"
+	}
+	// "ignored-players": ["firefox"]
+},
+
+
+
+"cava": {
+    //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+            "framerate": 120,
+           //"autosens": 3,
+           "sensitivity": 3,
+            "sleep_timer": 40,
+            "interval": 1,
+            "bars": 150,
+            "lower_cutoff_freq": 50,
+            "higher_cutoff_freq": 21000,
+            "method": "pulse",
+            "rotate":0,
+            "source": "auto",
+            "stereo": true,
+            "hide_on_silence": false,
+            "reverse": false,
+            "bar_delimiter": 032,
+           // "monstercat": true,
+            "waves": true,
+            "noise_reduction": 0.95,
+            "input_delay": 0,
+            "format-icons" : ["<span></span>","<span></span>","▃","▄","<span foreground='#68ffdd'>▅</span>","<span foreground='#68ffdd'>▆</span>","<span foreground='#00ffc5'>█</span>" ],
+            "actions": {
+                       "on-click-right": "mode"
+                       }
+        },
+"gamemode": {
+    
+    "format": "{glyph}",
+    "format-alt": "{count}",
+    "hide-not-running": false,
+    "use-icon": true,
+    "icon-name": "input-gaming-symbolic",
+    "icon-spacing": 4,
+    "icon-size": 20,
+    
+    "tooltip": true,
+    "tooltip-format": "Games running: {count}"
+},
+
+"hyprland/submap": {
+    "format": "✌️ {}",
+    "max-length": 8,
+    "tooltip": false
+},
+
+"custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='#ffffff'></span>  ",
+      "dnd-notification": "<span foreground='#ffffff'></span>  ",
+      "none": "<span foreground='#ffffff'></span>  ",
+  
+      "dnd-none": "  ",
+      "inhibited-notification": " ",
+      "inhibited-none": "  ",
+      "dnd-inhibited-notification": " ",
+      "dnd-inhibited-none": "  "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+"bluetooth": {
+	"format": " {status}",
+	"format-connected": " {device_alias}",
+	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+},
+
+"custom/weather": {
+    "format": "{} ° Nassau",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar ",
+    "return-type": "json"
+},
+"custom/weather#center": {
+    "format": "{}° ",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --fahrenheit --location Nassau,Bahamas",
+    "return-type": "json"
+},
+
+
+
+"group/toolbelt2": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-music",
+        "transition-left-to-right": true,
+    },
+    "modules": [
+        "", // First element is the "group leader" and won't ever be hidden
+        "custom/search",
+        "custom/apps",
+        ""
+    ]
+
+},
+
+
+"custom/apps": {
+    "rotate": -45,
+    "format": "󰒕",
+    "on-click": "wofi --drun",
+},
+
+
+"custom/music": {
+    "format": "󱍙",
+    "on-click": "spotify",
+},
+
+
+"custom/lutris": {
+    "format": "󰊖",
+    "on-click": "lutris",
+},
+
+
+"custom/code": {
+    "format": "󰨞",
+    "on-click": "code",
+},
+
+"custom/killer": {
+    "format": "",
+    "on-click": "hyprctl kill",
+},
+
+
+
+
+},
+
+
+{  "include": "~/.config/waybar/hardwaremodules",
+      "name": "status",
+    "mode": "hide",
+    "layer": "overlay", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 0, // Waybar height (to be removed for auto height)
+  "width": 2, // Waybar width
+   "spacing": 0, // Gaps between modules (4px)
+   // Choose the order of the modules
+   "margin": "0 0 0 0",
+   "modules-right": ["","","",""],
+   "modules-center": ["",""],
+   "modules-left": ["","","","","",""],
+   // Modules configuration
+
+   "network#stats2": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "{essid}      <span  foreground='#ffbb59'>{frequency}Ghz</span>    <span  foreground='#d0ff96'>   {bandwidthUpBits}</span>       <span  foreground='#96c7ff'>   {bandwidthDownBits}</span> ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "  "
+   },
+
+
+"hyprland/window": {
+    "format": "",
+    "rewrite": {
+        
+        "(.*) - osu!": "osu",
+        "(.*) — Mozilla Firefox": "🌎 $1",
+        "(.*) — Ablaze Floorp": "Floorp Web Browser",
+        "(.*) - fish": "> [$1]"
+    },
+    "separate-outputs": true
+    
+},
+
+
+"wlr/taskbar": {
+	"format": "{icon}",
+	"icon-size": 48,
+
+	"tooltip-format": "{title}",
+	"on-click": "activate",
+	"on-click-middle": "close",
+	"ignore-list": [
+	    "Alacritty"
+	],
+	"app_ids-mapping": {
+		"firefoxdeveloperedition": "firefox-developer-edition"
+	},
+	"rewrite": {
+		"Firefox Web Browser": "Firefox",
+		"Foot Server": "Terminal"
+	}
+},
+
+
+"clock#time": {
+	"format": "{:%I:%M %p}"
+    
+  },
+
+
+  "cava": {
+    //        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+            "framerate": 100,
+          // "autosens": 0,
+           "sensitivity": 3,
+            "sleep_timer": 40,
+            "interval": 1,
+            "bars": 200,
+            "lower_cutoff_freq": 50,
+            "higher_cutoff_freq": 21000,
+            "method": "pulse",
+            "rotate":0,
+            "source": "auto",
+            "stereo": true,
+            "hide_on_silence": false,
+            "reverse": false,
+            "bar_delimiter": 032,
+            "monstercat": true,
+            "waves": true,
+            "noise_reduction": 0.87,
+            "input_delay": 0,
+            "format-icons" : ["<span>▁</span>","▃","▄","<span foreground='#71D4FF'>▅</span>","<span foreground='#67D1FF'>▆</span>","<span foreground='#00B2FF'>█</span>" ],
+            "actions": {
+                       "on-click-right": "mode"
+                       }
+        },
+
+"user": {
+    "format": " {work_M}  ↑",
+    "interval": 60,
+    "height": 30,
+    "width": 30,
+    "icon": true,
+    "avatar": "~/Pictures/wallpapers/mountain.jpg"
+}
+}
+
+]
+
+
+
+
+

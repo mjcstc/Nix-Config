@@ -1,0 +1,317 @@
+{
+
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-active": "{icon} {name}",
+        "format-icons": {
+          
+            "15": "Session Managed",
+            "empty": "<span size='small' foreground='#6C6C6C'></span>",
+            "default": "<span size='small' ></span>",
+            "active": "<span size='small' ></span>"
+        },
+           "persistent_workspaces": {
+                 "*": 10 // but only three on HDMI-A-1
+           }
+    },
+
+    "cpu#surrogate": {
+        "format-alt": "-",
+        "format": "",
+        "format-icons": ["<span foreground='#95FF72' size='x-large'></span>","<span foreground='#95FF72' size='x-large'></span>","<span foreground='#95FF72' size='x-large'></span>","<span foreground='#F1C40F' size='x-large'>      󱑲 </span>","<span foreground='#F1C40F' size='x-large'>      󱑲 </span>","<span foreground='#F1C40F' size='x-large'>      󱑲 </span>","<span foreground='#DC7633' size='x-large'>      󱑳 </span>","<span foreground='#DC7633' size='x-large'>      󱑳 </span>","<span foreground='#DC7633' size='x-large'>      󱑳 </span>","<span foreground='#F5B041' size='x-large'>      󱑳 </span>","<span foreground='#E74C3C' size='x-large'>      󱑴 </span>","<span foreground='#E74C3C' size='x-large'>      󱑴 </span>","<span foreground='#E74C3C' size='x-large'>      󱑴 </span>"],
+        "tooltip": false,
+        "on-right-click": "kitty btop",
+        "interval": 4,
+        "max-length": 16, 
+        "min-length": 8 
+        
+ 
+    },
+"cpu#icon": {
+       "format-alt": "",
+       "format": "{icon}",
+       "format-icons": ["<span foreground='#95FF72' size='x-large'>󰄬  󱑲 </span>","<span foreground='#95FF72' size='x-large'>󰄬  󱑲 </span>","<span foreground='#95FF72' size='x-large'>󰄬  󱑲 </span>","<span foreground='#FF9E43' size='x-large'>  󱑲 </span>","<span foreground='#FF9E43' size='x-large'>  󱑲 </span>","<span foreground='#FF9E43' size='x-large'>  󱑲 </span>","<span foreground='#DC7633' size='x-large'>  󱑳 </span>","<span foreground='#DC7633' size='x-large'>  󱑳 </span>","<span foreground='#DC7633' size='x-large'>  󱑳 </span>","<span foreground='#F5B041' size='x-large'>  󱑳 </span>","<span foreground='#E74C3C' size='x-large'>   󱑴 </span>","<span foreground='#E74C3C' size='x-large'>  󱑴 </span>","<span foreground='#E74C3C' size='x-large'>  󱑴 </span>"],
+       "tooltip": false,
+       "on-right-click": "kitty btop",
+       "interval": 10,
+       "max-length": 20, 
+       "rotate": 0,
+       "min-length": 0 
+       
+
+   },
+
+   "cpu": {
+    "format": "{icon}  <span foreground='#ffffff' size='small'>{usage}%</span>       <span foreground='#87cfff' size='large'>󰓅</span>   <span foreground='#ffffff' size='small'>{avg_frequency}Ghz</span>",
+    "format-alt": "{icon}  {usage}%",
+    "format-icons": [
+    "<span foreground='#87ff68' size='large'>󰌪</span>","<span foreground='#87ff68' size='large'>󰌪</span>",
+    "<span foreground='#cbff68' size='large'>󰪠</span>","<span foreground='#cbff68' size='large'>󰪡</span>",
+    "<span foreground='#ffce68' size='large'>󰪢</span>","<span foreground='#ffce68' size='large'>󰪣</span>",
+    "<span foreground='#ff6868' size='large'>󰪤</span>","<span foreground='#ff6868' size='large'>󰪥</span>"
+],
+    "tooltip": false,
+
+    "interval": 4,
+ 
+    "rotate": 0,
+ 
+    
+
+},
+
+"network#stats": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": " <span  foreground='#d0ff96'>   {bandwidthUpBits}</span>       <span  foreground='#96c7ff'>   {bandwidthDownBits}</span> ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "  "
+    
+},
+
+
+
+   "clock#date": {
+    "format": "{:%a %d %Y}"
+  },
+
+  "clock#time": {
+	"format": "  {:%I:%M %p}"
+    
+  },
+   "memory#icon": {
+       "format-alt": "{icon}  {used:0.1f}GB",
+       "format": "{icon}",
+       "format-icons": ["<span foreground='#646464' size='large'></span>","<span foreground='#646464'size='large'></span>","<span foreground='#646464'size='large'></span>","<span foreground='#FF8362'size='large'></span>","<span foreground='#FF8362'size='large'></span>","<span foreground='#e46876'size='large'></span>"],
+       "interval": 4 
+      
+   },
+
+   "memory#usage": {
+    "format": "{used}GB",
+    "format-alt": "{used}GB",
+    "interval": 4
+},
+   "temperature#text": {
+    
+        //"thermal-zone": 2,
+       "interval": 1,
+       "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+       "format": "{temperatureC}°C",
+       "critical-threshold": 90,
+   },
+
+   "temperature#icon": {
+    "format-alt-click": "click-right",
+    //"thermal-zone": 2,
+   "interval": 1,
+   "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+   "critical-threshold": 90,
+   "format-icons": [
+    "<span foreground='#59d3ff' size='large'>󱑲</span>","<span foreground='#d4ff59' size='large'>󱑳</span>",
+    
+],
+
+   "format": "{icon}   {temperatureC}°C"
+},
+
+
+"cpu#text": {
+    "format": "<span size='medium'>{usage}%</span>",
+    "format-icons": ["<span foreground='#97FF5C' size='x-large'></span>","<span foreground='#D86C27'size='x-large'>󰪠</span>","<span foreground='#e46876'size='x-large'>󰪣</span>","<span foreground='#ff3105' size='x-large'>󰗖</span>"],
+    "tooltip": false,
+    "on-right-click": "kitty btop",
+    "interval": 4,
+    "max-length": 8, 
+    "min-length": 8 
+    
+
+},
+
+"pulseaudio#center": {
+    "format-alt-click": "click-right",
+    "interval": 1,
+    // "scroll-step": 1, // %, can be a float
+    "format": "{format_source}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "<span foreground=''></span>",
+    "format-source": "<span></span>",
+    "format-source-muted": "<span foreground='#303736'></span>",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pamixer --default-source -m",
+    "on-click-right": "pamixer --default-source -u"
+},
+
+
+"group/group-input": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 300,
+        "children-class": "not-power",
+        "transition-left-to-right": false,
+    },
+    "modules": [
+    
+        "pulseaudio#center", // First element is the "group leader" and won't ever be hidden
+        "pulseaudio#text2",
+        "",
+        ""
+      
+
+    ]
+},
+
+"pulseaudio#text2": {
+    "format-alt-click": "click-right",
+    "interval": 1,
+    // "scroll-step": 1, // %, can be a float
+    "format": "{format_source}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "<span foreground=''></span>",
+    "format-source": "<span size='medium'>Transmitting Audio  </span>",
+    "format-source-muted":  "<span size='medium' foreground='#FF8181' >Microphone Halted   </span>",
+    "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pamixer --default-source -m",
+    "on-click-right": "pamixer --default-source -u"
+},
+
+
+"mpris#position": {
+	"format": "{position} / {length} ",
+    "format-paused":"paused",
+    "album-len": 0,
+    "format-firefox": "{player}",
+    "dynamic-separator": " by ",
+	
+    "min-length": 20,
+    "interval": 1,
+    "on-scroll-down" : "playerctld shift",
+    "on-scroll-up" : "playerctld unshift",
+    "dynamic-order": ["title", "artist", "album", "position", "length"],
+	"player-icons": {
+        "brave": "<span foreground='#FFFFFF'size='x-large'></span>",
+        "firefox": "<span size='x-large' foreground='#ff6d32'>  </span>",
+		"default": "<span foreground='#B300C2' >󰠃 </span>",
+        "spotify": "<span foreground='#FFFFFF'size='x-large'>\uf1bc</span>",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "<span foreground='#ffffff'size='large'></span>",
+        "playing": "<span foreground='#ffffff'size='large'>󰏤</span>"
+	}
+	// "ignored-players": ["firefox"]
+},
+
+
+
+"mpris#bottom": {
+	"format": "{player_icon}",
+    "album-len": 0,
+    "format-firefox": "{player}",
+    "dynamic-separator": " by ",
+	"format-paused": "",
+    "max-length": 50,
+    "interval": 0,
+    "dynamic-order": ["title", "artist", "album", "position", "length"],
+	"player-icons": {
+        "brave": "<span foreground='#ffffff'></span>",
+        "firefox": "<span foreground='#ff6d32'>  </span>",
+		"default": "<span foreground='#B300C2' >󰠃 </span>",
+        "spotify": "<span foreground='#6FBF52'> </span>",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "󰏤",
+        "playing": ""
+	}
+	// "ignored-players": ["firefox"]
+},
+
+"mpris#title": {
+	"format": "{title}",
+    "album-len": 0,
+    "format-firefox": "{player}",
+    "dynamic-separator": " by ",
+	"format-paused": "",
+    "max-length": 50,
+    "interval": 0,
+    "dynamic-order": ["title", "artist", "album", "position", "length"],
+	"player-icons": {
+        "brave": "<span foreground='#ffffff'></span>",
+        "firefox": "",
+		"default": "<span foreground='#B300C2' >󰠃</span>",
+        "spotify": "<span foreground='#6FBF52'> </span>",
+		"mpv": "🎵"
+	},
+	"status-icons": {
+		"paused": "󰏤",
+        "playing": ""
+	}
+	// "ignored-players": ["firefox"]
+},
+
+"group/music": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 400,
+        "children-class": "not-cpu",
+        "transition-left-to-right": true,
+    },
+    "modules": [
+        "mpris#position",
+        "mpris#bottom", // First element is the "group leader" and won't ever be hidden
+        "mpris#title",
+     
+      
+
+    ]
+},
+
+"group/group-cpu": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 400,
+        "children-class": "not-cpu",
+        "transition-left-to-right": true,
+    },
+    "modules": [
+        "",
+        "temperature#icon", // First element is the "group leader" and won't ever be hidden
+        "cpu#surrogate",
+        "memory#icon",
+        "cpu#icon"
+      
+
+    ]
+},
+
+"custom/weather#center": {
+    "format": "{}° ",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --fahrenheit --location Nassau,Bahamas",
+    "return-type": "json"
+}
+
+}

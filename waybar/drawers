@@ -1,0 +1,57 @@
+{
+
+    "custom/home": {
+        "format":"<span foreground='#59d4ff' size='large'> 󰉌  </span>",
+        "on-click": "io.elementary.files",
+        "tooltip": false
+    },
+
+    "custom/downloads": {
+        "format":"<span foreground='#b8ffec' size='large'>󰉍  </span>",
+        "on-click": "io.elementary.files ~/Downloads",
+        "tooltip": false
+    },
+
+    "custom/pictures": {
+        "format":"<span foreground='#59ff61' size='large'>󰉏  </span>",
+        "on-click": "io.elementary.files ~/Pictures",
+        "tooltip": false
+    },
+
+    "custom/videos": {
+        "format":"<span foreground='#85ff94' size='large'>󱧺 </span>",
+        "on-click": "io.elementary.files ~/Videos",
+        "tooltip": false
+    },
+
+    "custom/config": {
+        "format":"<span foreground='#85d3ff' size='large'> 󱁿 </span>",
+        "on-click": "io.elementary.files ~/.config",
+        "tooltip": false
+    },
+
+    "custom/user": {
+        "format":"<span foreground='#ffffff' size='large'>  </span>",
+        "on-click": " ",
+        "tooltip": false
+    },
+
+    "custom/reboot": {
+        "format":"<span foreground='#ff5454' size='large'> 󰑓  </span>",
+        "on-click": "systemctl reboot",
+        "tooltip": false
+    },
+
+    "custom/shutdown": {
+        "format":"<span foreground='#59d4ff' size='large'> 󰤆  </span>",
+        "on-click": "systemctl shutdown",
+        "tooltip": false
+    },
+    
+    "custom/lock": {
+        "format":"<span foreground='#ffdd54' size='large'> 󰌾  </span>",
+        "on-click": "hyprlock",
+        "tooltip": false
+    },
+    
+}

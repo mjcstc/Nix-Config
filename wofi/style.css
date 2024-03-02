@@ -1,0 +1,66 @@
+*{
+    font-family: 'pretendard';
+    font-size: 18px;
+	all: unset;
+}
+
+#window {
+	/*background-color: --wofi-color0;*/
+	background-color: rgba(190, 190, 190, 0);
+	color: --wofi-color2;
+	border: 2px solid --wofi-color1;
+	border-radius: 14px;
+}
+
+#outer-box {
+	padding: 20px;
+}
+
+#input {
+background-color: rgba(240, 255, 255, 0);
+border: 2 solid rgba(94, 94, 94, 0.096);
+
+	padding: 1px 4px;
+    border-radius: 14px;
+}
+
+#scroll {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#inner-box {
+}
+
+#img {
+	padding-right: 10px;
+}
+
+#text {
+	color: rgb(255, 255, 255);
+    text-shadow: 0 0 4 black;
+}
+
+#text:selected {
+	color: --wofi-color0;
+
+}
+
+#entry {
+	padding: 12px;
+}
+
+#entry:selected {
+   background-color: rgba(190, 190, 190, 0.8);
+   font-size: 18;
+}
+
+#unselected {
+}
+
+#selected {
+}
+
+#input, #entry:selected {
+	border-radius: 4px;
+}
